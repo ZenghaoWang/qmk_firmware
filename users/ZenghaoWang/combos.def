@@ -1,0 +1,86 @@
+#include "quantum.h"
+#include "keycodes.h"
+// clang-format off
+
+// name, trigger name, simple? res, shift res, ctrl res, trigger keys...
+// wf = ;
+WF_SCLN, W_F_COMBO, false, ";", ":", SS_LCTL(":"), KC_W, LT_F_WINDOW;
+// xc = =
+CK_EQUAL, C_K_COMBO, false, "=", "+", SS_LCTL("="), KC_X, KC_C;
+// ,. = backslash
+COMMA_DOT_BSLSH, COM_DOT_COMBO, false, "\\", "|", SS_LCTL("\\"), KC_COMMA, TD(TD_DOT);
+// uy = -
+UY_DASH, U_Y_COMBO, false, "-", "_", SS_LCTL("-"), LT_U_APP, KC_Y;
+// bang
+HCOMMA_BANG, H_COMMA_COMBO, true, KC_EXLM, NULL, NULL, TD(TD_H_TODO), KC_COMM;
+
+// Arrows
+S_COMMA_LEFT_ARROW, S_COMMA_COMBO, false, "<-", NULL, "<=", HOME_S, KC_COMMA;
+S_DOT_RIGHT_ARROW, S_DOT_COMBO, false, "->", NULL, "=>", HOME_S, TD(TD_DOT);
+
+// ao = capslock
+AO_CAPSLOCK, A_O_COMBO, true, KC_CAPS, NULL, NULL, HOME_A, HOME_O;
+
+// capsword
+RS_CAPSWORD, R_S_COMBO, true, KC_CAPS_WORD, NULL, NULL, HOME_R, HOME_S;
+
+// esc
+NE_ESC, N_E_COMBO, true, KC_ESC, NULL, NULL, HOME_N, HOME_E;
+
+// q' = reset
+QQUOT_RESET, Q_QUOT_COMBO, true, RESET, NULL, NULL, KC_Q, KC_QUOT;
+
+//z/ = power options
+ZSLASH_POWER_OPTS, Z_SLASH_COMBO, false, SS_LGUI(SS_TAP(X_X)) SS_DELAY(200) SS_TAP(X_U), NULL, NULL, KC_Z, KC_SLASH;
+
+// Stenograpchic combos which use backspace to mitigate the chance of conflicting with regular keystrokes
+BSPCEV_EVERY, BSPC_E_V_COMBO, false, "every", "Every", NULL, LT_BSPC_NUMPAD, HOME_E, KC_V;
+BSPCU_YOU, BSPC_U_COMBO, false, "you", "You", NULL, LT_BSPC_NUMPAD, LT_U_APP;
+BSPCU_AND, BSPC_A_COMBO, false, "and", "And", NULL, LT_BSPC_NUMPAD, HOME_A;
+BSPCN_NOT, BSPC_N_COMBO, false, "not", "Not", "n't", LT_BSPC_NUMPAD, HOME_N;
+BSPCF_FOR, BSPC_F_COMBO, false, "for", "For", NULL, LT_BSPC_NUMPAD, LT_F_WINDOW;
+BSPCH_HERE, BSPC_H_COMBO, false, "here", "Here", NULL, LT_BSPC_NUMPAD, TD(TD_H_TODO);
+BSPCT_THE, BSPC_T_COMBO, false, "the", "The", NULL, LT_BSPC_NUMPAD, HOME_T;
+BSPCM_MENT, BSPC_M_COMBO, false, "ment", "Ment", NULL, LT_BSPC_NUMPAD, KC_M;
+BSPCG_ING, BSPC_G_COMBO, false, "ing", "Ing", NULL, LT_BSPC_NUMPAD, KC_G;
+BSPCO_OUGH, BSPC_O_COMBO, false, "ough", "Ough", NULL, LT_BSPC_NUMPAD, HOME_O;
+BSPCI_ION, BSPC_I_COMBO, false, "ion", "Ion", NULL, LT_BSPC_NUMPAD, HOME_I;
+BSPCIS_IONS, BSPC_I_S_COMBO, false, "ions", "Ions", NULL, LT_BSPC_NUMPAD, HOME_I, HOME_S;
+BSPCTA_THAT, BSPC_T_A_COMBO, false, "that", "That", "that's", LT_BSPC_NUMPAD, HOME_T, HOME_A;
+BSPCQ_QUE, BSPC_Q_COMBO, false, "que", "Que", NULL, LT_BSPC_NUMPAD, KC_Q;
+BSPCK_KEY, BSPC_K_COMBO, false, "key", "Key", NULL, LT_BSPC_NUMPAD, KC_K;
+BSPCTS_THIS, BSPC_T_S_COMBO, false, "this", "This", NULL, LT_BSPC_NUMPAD, HOME_T, HOME_S;
+BSPCTH_THAT, BSPC_T_H_COMBO, false, "that", "That", NULL, LT_BSPC_NUMPAD, HOME_T, TD(TD_H_TODO);
+BSPCDN_DONT, BSPC_D_N_COMBO, false, "don't", "Don't", "do not", LT_BSPC_NUMPAD, TD(TD_D_WOX), HOME_N;
+BSPCL_LOOK, BSPC_L_COMBO, false, "look", "Look", NULL, LT_BSPC_NUMPAD, KC_L;
+BSPCE_EYE, BSPC_E_COMBO, false, "eye", "Eye", NULL, LT_BSPC_NUMPAD, HOME_E;
+BSPCW_WHAT, BSPC_W_COMBO, false, "what", "What", NULL, LT_BSPC_NUMPAD, KC_W;
+BSPCP_PARA, BSPC_P_COMBO, false, "para", "Para", NULL, LT_BSPC_NUMPAD, KC_P;
+BSPCAT_AND_THE, BSPC_A_T_COMBO, false, "and the", "And the", NULL, LT_BSPC_NUMPAD, HOME_A, HOME_T;
+BSPC_Z_ZENGHAO, BSPC_Z_COMBO, false, "zenghao", "Zenghao", "Zenghao Wang", LT_BSPC_NUMPAD, KC_Z;
+BSPCAT_IN_THE, BSPC_I_T_COMBO, false, "in the", "In the", NULL, LT_BSPC_NUMPAD, HOME_I, HOME_T;
+BSPCOT, BSPC_O_T_COMBO, false, "on the", "On the", NULL, LT_BSPC_NUMPAD, HOME_O, HOME_T;
+BSPC_B_BASSOON, BSPC_B_COMBO, false, "bassoon", "Bassoon", NULL, LT_BSPC_NUMPAD, KC_B;
+
+
+
+// Steno combos which do not use backspace
+JU_JUST, J_U_COMBO, false, "just", "Just", NULL, KC_J, LT_U_APP;
+HV_HAVE, H_V_COMBO, false, "have", "Have", NULL, TD(TD_H_TODO), KC_V;
+QK_QMK, Q_K_COMBO, false, "qmk", "QMK", NULL, KC_Q, KC_K;
+KB_KEYBOARD, K_B_COMBO, false, "keyboard", "Keyboard", NULL, KC_K, KC_B;
+WA_WAS, W_A_COMBO, false, "was", "Was", NULL, KC_W, HOME_A;
+FR_FROM, F_R_COMBO, false, "from", "From", NULL, LT_F_WINDOW, HOME_R;
+FA_FACE, F_A_COMBO, false, "face", "Face", NULL, LT_F_WINDOW, HOME_A;
+OD_OULD, O_D_COMBO, false, "ould", "Ould", NULL, HOME_O, TD(TD_D_WOX);
+WI_WITH, W_I_COMBO, false, "with", "With", NULL, HOME_I, KC_W;
+IE_IKE, I_E_COMBO, false, "ike", "Ike", NULL, HOME_I, HOME_E;
+AK_AWKWARD, A_K_COMBO, false, "awkward", "Awkward", NULL, HOME_A, KC_K;
+RM_REMEMBER, R_M_COMBO, false, "remember", "Remember", NULL, HOME_R, KC_M;
+SY_SYMPHON, S_Y_COMBO, false, "symphon", "Symphon", NULL, HOME_S, KC_Y;
+
+// Vertical combos
+WR_WARD, W_R_COMBO, false, "ward", "Ward", NULL, KC_W, HOME_R;
+
+
+
