@@ -2,3 +2,5 @@
 # ORYX_ENABLE = yes
 # SRC += matrix.c
 
+RGB_MATRIX_ENABLE = no
+RGBLIGHT_ENABLE = no
