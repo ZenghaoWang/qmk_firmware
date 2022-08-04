@@ -688,6 +688,16 @@ Remove the spread effect entirely.
 #define RGB_MATRIX_TYPING_HEATMAP_SLIM
 ```
 
+### RGB Matrix Effect Solid Reactive :id=rgb-matrix-effect-solid-reactive
+
+Solid reactive effects will pulse RGB light on key presses with user configurable hues. To enable gradient mode that will automatically change reactive color, add the following define:
+
+```c
+#define RGB_MATRIX_SOLID_REACTIVE_GRADIENT_MODE
+```
+
+Gradient mode will loop through the color wheel hues over time and its duration can be controlled with the effect speed keycodes (`RGB_SPI`/`RGB_SPD`).
+
 ## Custom RGB Matrix Effects :id=custom-rgb-matrix-effects
 
 By setting `RGB_MATRIX_CUSTOM_USER = yes` in `rules.mk`, new effects can be defined directly from your keymap or userspace, without having to edit any QMK core files. To declare new effects, create a `rgb_matrix_user.inc` file in the user keymap directory or userspace folder.
@@ -795,6 +805,7 @@ These are defined in [`color.h`](https://github.com/qmk/qmk_firmware/blob/master
 #define RGB_MATRIX_DISABLE_KEYCODES // disables control of rgb matrix by keycodes (must use code functions to control the feature)
 #define RGB_MATRIX_SPLIT { X, Y } 	// (Optional) For split keyboards, the number of LEDs connected on each half. X = left, Y = Right.
                               		// If RGB_MATRIX_KEYPRESSES or RGB_MATRIX_KEYRELEASES is enabled, you also will want to enable SPLIT_TRANSPORT_MIRROR
+#define RGB_TRIGGER_ON_KEYDOWN      // Triggers RGB keypress events on key down. This makes RGB control feel more responsive. This may cause RGB to not function properly on some boards
 ```
 
 ## EEPROM storage :id=eeprom-storage
