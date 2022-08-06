@@ -1,10 +1,11 @@
 #pragma once
 #include "keyboards/moonlander/moonlander.h"
+#include "keyboards/bastardkb/charybdis/charybdis.h"
 #include "layers.h"
 
 enum zenghao_keycodes {
     // Press enter, then send the string /mute_all, then press enter
-    MACRO_MUTE_ALL = ML_SAFE_RANGE,
+    MACRO_MUTE_ALL = CHARYBDIS_SAFE_RANGE,
     MACRO_PASTE_OVER,
     MACRO_COPY_ALL,
     MACRO_CUT_ALL,

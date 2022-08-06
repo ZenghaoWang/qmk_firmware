@@ -5,14 +5,6 @@
 #include "users/ZenghaoWang/layout.h"
 #include "users/ZenghaoWang/layers.h"
 
-// enum custom_keycodes {
-//     RGB_SLD = ZENGHAO_SAFE_RANGE,
-//     // Keycodes to set the layer rbg to a certain color when tapped
-//     HSV_129_255_255,
-//     HSV_79_255_255,
-//     HSV_209_255_255,
-// };
-
 #define LAYOUT_moonlander_wrapper(...) LAYOUT_moonlander(__VA_ARGS__)
 
 // clang-format off
